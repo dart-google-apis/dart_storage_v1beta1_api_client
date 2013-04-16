@@ -14,13 +14,13 @@ class BucketAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String bucket, String entity, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String bucket, core.String entity, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/acl/{entity}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (entity == null) paramErrors.add("entity is required");
@@ -55,13 +55,13 @@ class BucketAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<BucketAccessControl> get(String bucket, String entity, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<BucketAccessControl> get(core.String bucket, core.String entity, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/acl/{entity}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (entity == null) paramErrors.add("entity is required");
@@ -96,13 +96,13 @@ class BucketAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<BucketAccessControl> insert(BucketAccessControl request, String bucket, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<BucketAccessControl> insert(BucketAccessControl request, core.String bucket, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/acl";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (optParams != null) {
@@ -133,13 +133,13 @@ class BucketAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<BucketAccessControls> list(String bucket, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<BucketAccessControls> list(core.String bucket, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/acl";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (optParams != null) {
@@ -174,13 +174,13 @@ class BucketAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<BucketAccessControl> patch(BucketAccessControl request, String bucket, String entity, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<BucketAccessControl> patch(BucketAccessControl request, core.String bucket, core.String entity, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/acl/{entity}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (entity == null) paramErrors.add("entity is required");
@@ -217,13 +217,13 @@ class BucketAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<BucketAccessControl> update(BucketAccessControl request, String bucket, String entity, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<BucketAccessControl> update(BucketAccessControl request, core.String bucket, core.String entity, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/acl/{entity}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (entity == null) paramErrors.add("entity is required");
@@ -262,13 +262,13 @@ class BucketsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String bucket, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String bucket, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (optParams != null) {
@@ -304,13 +304,13 @@ class BucketsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Bucket> get(String bucket, {String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Bucket> get(core.String bucket, {core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (projection != null && !["full", "no_acl"].contains(projection)) {
@@ -350,13 +350,13 @@ class BucketsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Bucket> insert(Bucket request, {String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Bucket> insert(Bucket request, {core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (projection != null && !["full", "no_acl"].contains(projection)) {
       paramErrors.add("Allowed values for projection: full, no_acl");
     }
@@ -399,13 +399,13 @@ class BucketsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Buckets> list(String projectId, {int max_results, String pageToken, String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Buckets> list(core.String projectId, {core.int max_results, core.String pageToken, core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (max_results != null) queryParams["max-results"] = max_results;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (projectId == null) paramErrors.add("projectId is required");
@@ -449,13 +449,13 @@ class BucketsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Bucket> patch(Bucket request, String bucket, {String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Bucket> patch(Bucket request, core.String bucket, {core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (projection != null && !["full", "no_acl"].contains(projection)) {
@@ -497,13 +497,13 @@ class BucketsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Bucket> update(Bucket request, String bucket, {String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Bucket> update(Bucket request, core.String bucket, {core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (projection != null && !["full", "no_acl"].contains(projection)) {
@@ -548,13 +548,13 @@ class ObjectAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String bucket, String object, String entity, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String bucket, core.String object, core.String entity, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl/{entity}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (entity == null) paramErrors.add("entity is required");
@@ -593,13 +593,13 @@ class ObjectAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<ObjectAccessControl> get(String bucket, String object, String entity, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<ObjectAccessControl> get(core.String bucket, core.String object, core.String entity, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl/{entity}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (entity == null) paramErrors.add("entity is required");
@@ -638,13 +638,13 @@ class ObjectAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<ObjectAccessControl> insert(ObjectAccessControl request, String bucket, String object, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<ObjectAccessControl> insert(ObjectAccessControl request, core.String bucket, core.String object, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (object == null) paramErrors.add("object is required");
@@ -679,13 +679,13 @@ class ObjectAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<ObjectAccessControls> list(String bucket, String object, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<ObjectAccessControls> list(core.String bucket, core.String object, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (object == null) paramErrors.add("object is required");
@@ -724,13 +724,13 @@ class ObjectAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<ObjectAccessControl> patch(ObjectAccessControl request, String bucket, String object, String entity, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<ObjectAccessControl> patch(ObjectAccessControl request, core.String bucket, core.String object, core.String entity, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl/{entity}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (entity == null) paramErrors.add("entity is required");
@@ -771,13 +771,13 @@ class ObjectAccessControlsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<ObjectAccessControl> update(ObjectAccessControl request, String bucket, String object, String entity, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<ObjectAccessControl> update(ObjectAccessControl request, core.String bucket, core.String object, core.String entity, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl/{entity}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (entity == null) paramErrors.add("entity is required");
@@ -820,13 +820,13 @@ class ObjectsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String bucket, String object, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String bucket, core.String object, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (object == null) paramErrors.add("object is required");
@@ -866,13 +866,13 @@ class ObjectsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Object> get(String bucket, String object, {String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Object> get(core.String bucket, core.String object, {core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (object == null) paramErrors.add("object is required");
@@ -922,14 +922,14 @@ class ObjectsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Object> insert(Object request, String bucket, {String content, String contentType, String name, String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Object> insert(Object request, core.String bucket, {core.String content, core.String contentType, core.String name, core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o";
     var uploadUrl = "/upload/storage/v1beta1/b/{bucket}/o";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (name != null) queryParams["name"] = name;
@@ -983,13 +983,13 @@ class ObjectsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Objects> list(String bucket, {String delimiter, int max_results, String pageToken, String prefix, String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Objects> list(core.String bucket, {core.String delimiter, core.int max_results, core.String pageToken, core.String prefix, core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (delimiter != null) queryParams["delimiter"] = delimiter;
@@ -1037,13 +1037,13 @@ class ObjectsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Object> patch(Object request, String bucket, String object, {String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Object> patch(Object request, core.String bucket, core.String object, {core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (object == null) paramErrors.add("object is required");
@@ -1089,13 +1089,13 @@ class ObjectsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Object> update(Object request, String bucket, String object, {String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Object> update(Object request, core.String bucket, core.String object, {core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (bucket == null) paramErrors.add("bucket is required");
     if (bucket != null) urlParams["bucket"] = bucket;
     if (object == null) paramErrors.add("object is required");

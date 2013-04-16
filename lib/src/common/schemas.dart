@@ -4,37 +4,37 @@ part of storage_v1beta1_api_client;
 class Bucket {
 
   /** Access controls on the bucket. */
-  List<BucketAccessControl> acl;
+  core.List<BucketAccessControl> acl;
 
   /** Default access controls to apply to new objects when no ACL is provided. */
-  List<ObjectAccessControl> defaultObjectAcl;
+  core.List<ObjectAccessControl> defaultObjectAcl;
 
   /** The name of the bucket. */
-  String id;
+  core.String id;
 
   /** The kind of item this is. For buckets, this is always storage#bucket. */
-  String kind;
+  core.String kind;
 
   /** The location of the bucket. Object data for objects in the bucket resides in physical storage in this location. Can be US or EU. Defaults to US. */
-  String location;
+  core.String location;
 
   /** The owner of the bucket. This will always be the project team's owner group. */
   BucketOwner owner;
 
   /** The project the bucket belongs to. */
-  String projectId;
+  core.String projectId;
 
   /** The URI of this bucket. */
-  String selfLink;
+  core.String selfLink;
 
   /** Creation time of the bucket in RFC 3339 format. */
-  String timeCreated;
+  core.String timeCreated;
 
   /** The bucket's website configuration. */
   BucketWebsite website;
 
   /** Create new Bucket from JSON data */
-  Bucket.fromJson(Map json) {
+  Bucket.fromJson(core.Map json) {
     if (json.containsKey("acl")) {
       acl = [];
       json["acl"].forEach((item) {
@@ -74,17 +74,17 @@ class Bucket {
   }
 
   /** Create JSON Object for Bucket */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (acl != null) {
-      output["acl"] = new List();
+      output["acl"] = new core.List();
       acl.forEach((item) {
         output["acl"].add(item.toJson());
       });
     }
     if (defaultObjectAcl != null) {
-      output["defaultObjectAcl"] = new List();
+      output["defaultObjectAcl"] = new core.List();
       defaultObjectAcl.forEach((item) {
         output["defaultObjectAcl"].add(item.toJson());
       });
@@ -118,7 +118,7 @@ class Bucket {
   }
 
   /** Return String representation of Bucket */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -126,13 +126,13 @@ class Bucket {
 class BucketOwner {
 
   /** The entity, in the form group-groupId. */
-  String entity;
+  core.String entity;
 
   /** The ID for the entity. */
-  String entityId;
+  core.String entityId;
 
   /** Create new BucketOwner from JSON data */
-  BucketOwner.fromJson(Map json) {
+  BucketOwner.fromJson(core.Map json) {
     if (json.containsKey("entity")) {
       entity = json["entity"];
     }
@@ -142,8 +142,8 @@ class BucketOwner {
   }
 
   /** Create JSON Object for BucketOwner */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (entity != null) {
       output["entity"] = entity;
@@ -156,7 +156,7 @@ class BucketOwner {
   }
 
   /** Return String representation of BucketOwner */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -164,13 +164,13 @@ class BucketOwner {
 class BucketWebsite {
 
   /** Behaves as the bucket's directory index where missing objects are treated as potential directories. */
-  String mainPageSuffix;
+  core.String mainPageSuffix;
 
   /** The custom object to return when a requested resource is not found. */
-  String notFoundPage;
+  core.String notFoundPage;
 
   /** Create new BucketWebsite from JSON data */
-  BucketWebsite.fromJson(Map json) {
+  BucketWebsite.fromJson(core.Map json) {
     if (json.containsKey("mainPageSuffix")) {
       mainPageSuffix = json["mainPageSuffix"];
     }
@@ -180,8 +180,8 @@ class BucketWebsite {
   }
 
   /** Create JSON Object for BucketWebsite */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (mainPageSuffix != null) {
       output["mainPageSuffix"] = mainPageSuffix;
@@ -194,7 +194,7 @@ class BucketWebsite {
   }
 
   /** Return String representation of BucketWebsite */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -202,13 +202,13 @@ class BucketWebsite {
 class BucketAccessControl {
 
   /** The name of the bucket. */
-  String bucket;
+  core.String bucket;
 
   /** The domain associated with the entity, if any. */
-  String domain;
+  core.String domain;
 
   /** The email address associated with the entity, if any. */
-  String email;
+  core.String email;
 
   /** The entity holding the permission, in one of the following forms: 
 - user-userId 
@@ -217,25 +217,25 @@ class BucketAccessControl {
 - group-email 
 - allUsers 
 - allAuthenticatedUsers */
-  String entity;
+  core.String entity;
 
   /** The ID for the entity, if any. */
-  String entityId;
+  core.String entityId;
 
   /** The ID of the access-control entry. */
-  String id;
+  core.String id;
 
   /** The kind of item this is. For bucket access control entries, this is always storage#bucketAccessControl. */
-  String kind;
+  core.String kind;
 
   /** The access permission for the entity. Can be READER, WRITER, or OWNER. */
-  String role;
+  core.String role;
 
   /** The link to this access-control entry. */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new BucketAccessControl from JSON data */
-  BucketAccessControl.fromJson(Map json) {
+  BucketAccessControl.fromJson(core.Map json) {
     if (json.containsKey("bucket")) {
       bucket = json["bucket"];
     }
@@ -266,8 +266,8 @@ class BucketAccessControl {
   }
 
   /** Create JSON Object for BucketAccessControl */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (bucket != null) {
       output["bucket"] = bucket;
@@ -301,7 +301,7 @@ class BucketAccessControl {
   }
 
   /** Return String representation of BucketAccessControl */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -309,13 +309,13 @@ class BucketAccessControl {
 class BucketAccessControls {
 
   /** The list of items. */
-  List<BucketAccessControl> items;
+  core.List<BucketAccessControl> items;
 
   /** The kind of item this is. For lists of bucket access control entries, this is always storage#bucketAccessControls. */
-  String kind;
+  core.String kind;
 
   /** Create new BucketAccessControls from JSON data */
-  BucketAccessControls.fromJson(Map json) {
+  BucketAccessControls.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -328,11 +328,11 @@ class BucketAccessControls {
   }
 
   /** Create JSON Object for BucketAccessControls */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -345,7 +345,7 @@ class BucketAccessControls {
   }
 
   /** Return String representation of BucketAccessControls */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -353,16 +353,16 @@ class BucketAccessControls {
 class Buckets {
 
   /** The list of items. */
-  List<Bucket> items;
+  core.List<Bucket> items;
 
   /** The kind of item this is. For lists of buckets, this is always storage#buckets. */
-  String kind;
+  core.String kind;
 
   /** The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new Buckets from JSON data */
-  Buckets.fromJson(Map json) {
+  Buckets.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -378,11 +378,11 @@ class Buckets {
   }
 
   /** Create JSON Object for Buckets */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -398,7 +398,7 @@ class Buckets {
   }
 
   /** Return String representation of Buckets */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -406,28 +406,28 @@ class Buckets {
 class Object {
 
   /** Access controls on the object. */
-  List<ObjectAccessControl> acl;
+  core.List<ObjectAccessControl> acl;
 
   /** The bucket containing this object. */
-  String bucket;
+  core.String bucket;
 
   /** Cache-Control directive for the object data. */
-  String cacheControl;
+  core.String cacheControl;
 
   /** Content-Disposition of the object data. */
-  String contentDisposition;
+  core.String contentDisposition;
 
   /** Content-Encoding of the object data. */
-  String contentEncoding;
+  core.String contentEncoding;
 
   /** Content-Language of the object data. */
-  String contentLanguage;
+  core.String contentLanguage;
 
   /** The ID of the object. */
-  String id;
+  core.String id;
 
   /** The kind of item this is. For objects, this is always storage#object. */
-  String kind;
+  core.String kind;
 
   /** Object media data. Provided on your behalf when uploading raw media or multipart/related with an auxiliary media part. */
   ObjectMedia media;
@@ -436,16 +436,16 @@ class Object {
   ObjectMetadata metadata;
 
   /** The name of this object. Required if not specified by URL parameter. */
-  String name;
+  core.String name;
 
   /** The owner of the object. This will always be the uploader of the object. */
   ObjectOwner owner;
 
   /** The link to this object. */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new Object from JSON data */
-  Object.fromJson(Map json) {
+  Object.fromJson(core.Map json) {
     if (json.containsKey("acl")) {
       acl = [];
       json["acl"].forEach((item) {
@@ -491,11 +491,11 @@ class Object {
   }
 
   /** Create JSON Object for Object */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (acl != null) {
-      output["acl"] = new List();
+      output["acl"] = new core.List();
       acl.forEach((item) {
         output["acl"].add(item.toJson());
       });
@@ -541,7 +541,7 @@ class Object {
   }
 
   /** Return String representation of Object */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -549,19 +549,19 @@ class Object {
 class ObjectMetadata {
 
   /** Create new ObjectMetadata from JSON data */
-  ObjectMetadata.fromJson(Map json) {
+  ObjectMetadata.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for ObjectMetadata */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of ObjectMetadata */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -569,13 +569,13 @@ class ObjectMetadata {
 class ObjectOwner {
 
   /** The entity, in the form user-userId. */
-  String entity;
+  core.String entity;
 
   /** The ID for the entity. */
-  String entityId;
+  core.String entityId;
 
   /** Create new ObjectOwner from JSON data */
-  ObjectOwner.fromJson(Map json) {
+  ObjectOwner.fromJson(core.Map json) {
     if (json.containsKey("entity")) {
       entity = json["entity"];
     }
@@ -585,8 +585,8 @@ class ObjectOwner {
   }
 
   /** Create JSON Object for ObjectOwner */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (entity != null) {
       output["entity"] = entity;
@@ -599,7 +599,7 @@ class ObjectOwner {
   }
 
   /** Return String representation of ObjectOwner */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -607,28 +607,28 @@ class ObjectOwner {
 class ObjectMedia {
 
   /** Hash algorithm used. Currently only MD5 is supported. Required if a hash is provided. */
-  String algorithm;
+  core.String algorithm;
 
   /** Content-Type of the object data. */
-  String contentType;
+  core.String contentType;
 
   /** URL-safe Base64-encoded data. This property can be used to insert objects under 64KB in size, and will only be returned in response to the get method for objects so created. When this resource is returned in response to the list method, this property is omitted. */
-  String data;
+  core.String data;
 
   /** Hash of the data. Required if a hash algorithm is provided. */
-  String hash;
+  core.String hash;
 
   /** Content-Length of the data in bytes. */
-  String length;
+  core.String length;
 
   /** Media download link. */
-  String link;
+  core.String link;
 
   /** Creation time of the data in RFC 3339 format. */
-  String timeCreated;
+  core.String timeCreated;
 
   /** Create new ObjectMedia from JSON data */
-  ObjectMedia.fromJson(Map json) {
+  ObjectMedia.fromJson(core.Map json) {
     if (json.containsKey("algorithm")) {
       algorithm = json["algorithm"];
     }
@@ -653,8 +653,8 @@ class ObjectMedia {
   }
 
   /** Create JSON Object for ObjectMedia */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (algorithm != null) {
       output["algorithm"] = algorithm;
@@ -682,7 +682,7 @@ class ObjectMedia {
   }
 
   /** Return String representation of ObjectMedia */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -690,13 +690,13 @@ class ObjectMedia {
 class ObjectAccessControl {
 
   /** The name of the bucket. */
-  String bucket;
+  core.String bucket;
 
   /** The domain associated with the entity, if any. */
-  String domain;
+  core.String domain;
 
   /** The email address associated with the entity, if any. */
-  String email;
+  core.String email;
 
   /** The entity holding the permission, in one of the following forms: 
 - user-userId 
@@ -705,28 +705,28 @@ class ObjectAccessControl {
 - group-email 
 - allUsers 
 - allAuthenticatedUsers */
-  String entity;
+  core.String entity;
 
   /** The ID for the entity, if any. */
-  String entityId;
+  core.String entityId;
 
   /** The ID of the access-control entry. */
-  String id;
+  core.String id;
 
   /** The kind of item this is. For object access control entries, this is always storage#objectAccessControl. */
-  String kind;
+  core.String kind;
 
   /** The name of the object. */
-  String object;
+  core.String object;
 
   /** The access permission for the entity. Can be READER or OWNER. */
-  String role;
+  core.String role;
 
   /** The link to this access-control entry. */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new ObjectAccessControl from JSON data */
-  ObjectAccessControl.fromJson(Map json) {
+  ObjectAccessControl.fromJson(core.Map json) {
     if (json.containsKey("bucket")) {
       bucket = json["bucket"];
     }
@@ -760,8 +760,8 @@ class ObjectAccessControl {
   }
 
   /** Create JSON Object for ObjectAccessControl */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (bucket != null) {
       output["bucket"] = bucket;
@@ -798,7 +798,7 @@ class ObjectAccessControl {
   }
 
   /** Return String representation of ObjectAccessControl */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -806,13 +806,13 @@ class ObjectAccessControl {
 class ObjectAccessControls {
 
   /** The list of items. */
-  List<ObjectAccessControl> items;
+  core.List<ObjectAccessControl> items;
 
   /** The kind of item this is. For lists of object access control entries, this is always storage#objectAccessControls. */
-  String kind;
+  core.String kind;
 
   /** Create new ObjectAccessControls from JSON data */
-  ObjectAccessControls.fromJson(Map json) {
+  ObjectAccessControls.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -825,11 +825,11 @@ class ObjectAccessControls {
   }
 
   /** Create JSON Object for ObjectAccessControls */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -842,7 +842,7 @@ class ObjectAccessControls {
   }
 
   /** Return String representation of ObjectAccessControls */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -850,19 +850,19 @@ class ObjectAccessControls {
 class Objects {
 
   /** The list of items. */
-  List<Object> items;
+  core.List<Object> items;
 
   /** The kind of item this is. For lists of objects, this is always storage#objects. */
-  String kind;
+  core.String kind;
 
   /** The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** The list of prefixes of objects matching-but-not-listed up to and including the requested delimiter. */
-  List<String> prefixes;
+  core.List<core.String> prefixes;
 
   /** Create new Objects from JSON data */
-  Objects.fromJson(Map json) {
+  Objects.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -884,11 +884,11 @@ class Objects {
   }
 
   /** Create JSON Object for Objects */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -900,7 +900,7 @@ class Objects {
       output["nextPageToken"] = nextPageToken;
     }
     if (prefixes != null) {
-      output["prefixes"] = new List();
+      output["prefixes"] = new core.List();
       prefixes.forEach((item) {
         output["prefixes"].add(item);
       });
@@ -910,7 +910,7 @@ class Objects {
   }
 
   /** Return String representation of Objects */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
