@@ -4,14 +4,14 @@ part of storage_v1beta1_api_console;
 /** Lets you store and retrieve potentially-large, immutable data objects. */
 class Storage extends ConsoleClient {
 
-  BucketAccessControlsResource _bucketAccessControls;
-  BucketAccessControlsResource get bucketAccessControls => _bucketAccessControls;
-  BucketsResource _buckets;
-  BucketsResource get buckets => _buckets;
-  ObjectAccessControlsResource _objectAccessControls;
-  ObjectAccessControlsResource get objectAccessControls => _objectAccessControls;
-  ObjectsResource _objects;
-  ObjectsResource get objects => _objects;
+  BucketAccessControlsResource_ _bucketAccessControls;
+  BucketAccessControlsResource_ get bucketAccessControls => _bucketAccessControls;
+  BucketsResource_ _buckets;
+  BucketsResource_ get buckets => _buckets;
+  ObjectAccessControlsResource_ _objectAccessControls;
+  ObjectAccessControlsResource_ get objectAccessControls => _objectAccessControls;
+  ObjectsResource_ _objects;
+  ObjectsResource_ get objects => _objects;
 
   /** OAuth Scope2: Manage your data and permissions in Google Cloud Storage */
   static const core.String DEVSTORAGE_FULL_CONTROL_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
@@ -74,9 +74,9 @@ class Storage extends ConsoleClient {
   Storage([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/storage/v1beta1/";
     rootUrl = "https://www.googleapis.com:443/";
-    _bucketAccessControls = new BucketAccessControlsResource(this);
-    _buckets = new BucketsResource(this);
-    _objectAccessControls = new ObjectAccessControlsResource(this);
-    _objects = new ObjectsResource(this);
+    _bucketAccessControls = new BucketAccessControlsResource_(this);
+    _buckets = new BucketsResource_(this);
+    _objectAccessControls = new ObjectAccessControlsResource_(this);
+    _objects = new ObjectsResource_(this);
   }
 }
