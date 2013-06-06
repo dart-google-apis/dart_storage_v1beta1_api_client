@@ -73,7 +73,7 @@ class Storage extends ConsoleClient {
 
   Storage([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/storage/v1beta1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _bucketAccessControls = new BucketAccessControlsResource_(this);
     _buckets = new BucketsResource_(this);
     _objectAccessControls = new ObjectAccessControlsResource_(this);
