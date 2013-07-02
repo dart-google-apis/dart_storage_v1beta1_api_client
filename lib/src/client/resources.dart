@@ -15,7 +15,6 @@ class BucketAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<core.Map> delete(core.String bucket, core.String entity, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/acl/{entity}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -34,16 +33,12 @@ class BucketAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "DELETE", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(data))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response;
   }
 
   /**
@@ -56,7 +51,6 @@ class BucketAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<BucketAccessControl> get(core.String bucket, core.String entity, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/acl/{entity}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -75,16 +69,13 @@ class BucketAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new BucketAccessControl.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new BucketAccessControl.fromJson(data));
   }
 
   /**
@@ -97,7 +88,6 @@ class BucketAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<BucketAccessControl> insert(BucketAccessControl request, core.String bucket, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/acl";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -114,16 +104,13 @@ class BucketAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new BucketAccessControl.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new BucketAccessControl.fromJson(data));
   }
 
   /**
@@ -134,7 +121,6 @@ class BucketAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<BucketAccessControls> list(core.String bucket, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/acl";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -151,16 +137,13 @@ class BucketAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new BucketAccessControls.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new BucketAccessControls.fromJson(data));
   }
 
   /**
@@ -175,7 +158,6 @@ class BucketAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<BucketAccessControl> patch(BucketAccessControl request, core.String bucket, core.String entity, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/acl/{entity}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -194,16 +176,13 @@ class BucketAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PATCH", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new BucketAccessControl.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new BucketAccessControl.fromJson(data));
   }
 
   /**
@@ -218,7 +197,6 @@ class BucketAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<BucketAccessControl> update(BucketAccessControl request, core.String bucket, core.String entity, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/acl/{entity}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -237,16 +215,13 @@ class BucketAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PUT", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new BucketAccessControl.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new BucketAccessControl.fromJson(data));
   }
 }
 
@@ -263,7 +238,6 @@ class BucketsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<core.Map> delete(core.String bucket, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -280,16 +254,12 @@ class BucketsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "DELETE", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(data))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response;
   }
 
   /**
@@ -305,7 +275,6 @@ class BucketsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Bucket> get(core.String bucket, {core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -326,16 +295,13 @@ class BucketsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Bucket.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Bucket.fromJson(data));
   }
 
   /**
@@ -351,7 +317,6 @@ class BucketsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Bucket> insert(Bucket request, {core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -370,16 +335,13 @@ class BucketsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Bucket.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Bucket.fromJson(data));
   }
 
   /**
@@ -400,7 +362,6 @@ class BucketsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Buckets> list(core.String projectId, {core.int max_results, core.String pageToken, core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -423,16 +384,13 @@ class BucketsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Buckets.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Buckets.fromJson(data));
   }
 
   /**
@@ -450,7 +408,6 @@ class BucketsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Bucket> patch(Bucket request, core.String bucket, {core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -471,16 +428,13 @@ class BucketsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PATCH", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Bucket.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Bucket.fromJson(data));
   }
 
   /**
@@ -498,7 +452,6 @@ class BucketsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Bucket> update(Bucket request, core.String bucket, {core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -519,16 +472,13 @@ class BucketsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PUT", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Bucket.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Bucket.fromJson(data));
   }
 }
 
@@ -549,7 +499,6 @@ class ObjectAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<core.Map> delete(core.String bucket, core.String object, core.String entity, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl/{entity}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -570,16 +519,12 @@ class ObjectAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "DELETE", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(data))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response;
   }
 
   /**
@@ -594,7 +539,6 @@ class ObjectAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<ObjectAccessControl> get(core.String bucket, core.String object, core.String entity, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl/{entity}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -615,16 +559,13 @@ class ObjectAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new ObjectAccessControl.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new ObjectAccessControl.fromJson(data));
   }
 
   /**
@@ -639,7 +580,6 @@ class ObjectAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<ObjectAccessControl> insert(ObjectAccessControl request, core.String bucket, core.String object, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -658,16 +598,13 @@ class ObjectAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new ObjectAccessControl.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new ObjectAccessControl.fromJson(data));
   }
 
   /**
@@ -680,7 +617,6 @@ class ObjectAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<ObjectAccessControls> list(core.String bucket, core.String object, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -699,16 +635,13 @@ class ObjectAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new ObjectAccessControls.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new ObjectAccessControls.fromJson(data));
   }
 
   /**
@@ -725,7 +658,6 @@ class ObjectAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<ObjectAccessControl> patch(ObjectAccessControl request, core.String bucket, core.String object, core.String entity, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl/{entity}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -746,16 +678,13 @@ class ObjectAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PATCH", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new ObjectAccessControl.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new ObjectAccessControl.fromJson(data));
   }
 
   /**
@@ -772,7 +701,6 @@ class ObjectAccessControlsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<ObjectAccessControl> update(ObjectAccessControl request, core.String bucket, core.String object, core.String entity, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}/acl/{entity}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -793,16 +721,13 @@ class ObjectAccessControlsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PUT", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new ObjectAccessControl.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new ObjectAccessControl.fromJson(data));
   }
 }
 
@@ -821,7 +746,6 @@ class ObjectsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<core.Map> delete(core.String bucket, core.String object, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -840,16 +764,12 @@ class ObjectsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "DELETE", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(data))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response;
   }
 
   /**
@@ -867,7 +787,6 @@ class ObjectsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Object> get(core.String bucket, core.String object, {core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -890,16 +809,13 @@ class ObjectsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Object.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Object.fromJson(data));
   }
 
   /**
@@ -923,7 +839,6 @@ class ObjectsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Object> insert(Object request, core.String bucket, {core.String content, core.String contentType, core.String name, core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o";
     var uploadUrl = "/upload/storage/v1beta1/b/{bucket}/o";
     var urlParams = new core.Map();
@@ -946,8 +861,7 @@ class ObjectsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
@@ -956,10 +870,8 @@ class ObjectsResource_ extends Resource {
     } else {
       response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
     }
-    response
-      .then((data) => completer.complete(new Object.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Object.fromJson(data));
   }
 
   /**
@@ -984,7 +896,6 @@ class ObjectsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Objects> list(core.String bucket, {core.String delimiter, core.int max_results, core.String pageToken, core.String prefix, core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -1009,16 +920,13 @@ class ObjectsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Objects.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Objects.fromJson(data));
   }
 
   /**
@@ -1038,7 +946,6 @@ class ObjectsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Object> patch(Object request, core.String bucket, core.String object, {core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -1061,16 +968,13 @@ class ObjectsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PATCH", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Object.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Object.fromJson(data));
   }
 
   /**
@@ -1090,7 +994,6 @@ class ObjectsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Object> update(Object request, core.String bucket, core.String object, {core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "b/{bucket}/o/{object}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -1113,16 +1016,13 @@ class ObjectsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PUT", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Object.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Object.fromJson(data));
   }
 }
 
