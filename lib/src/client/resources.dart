@@ -1,9 +1,11 @@
-part of storage_v1beta1_api_client;
+part of storage_v1beta1_api;
 
-class BucketAccessControlsResource_ extends Resource {
+class BucketAccessControlsResource_ {
 
-  BucketAccessControlsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  BucketAccessControlsResource_(Client client) :
+      _client = client;
 
   /**
    * Deletes the ACL entry for the specified entity on the specified bucket.
@@ -225,10 +227,12 @@ class BucketAccessControlsResource_ extends Resource {
   }
 }
 
-class BucketsResource_ extends Resource {
+class BucketsResource_ {
 
-  BucketsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  BucketsResource_(Client client) :
+      _client = client;
 
   /**
    * Deletes an empty bucket.
@@ -482,10 +486,12 @@ class BucketsResource_ extends Resource {
   }
 }
 
-class ObjectAccessControlsResource_ extends Resource {
+class ObjectAccessControlsResource_ {
 
-  ObjectAccessControlsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ObjectAccessControlsResource_(Client client) :
+      _client = client;
 
   /**
    * Deletes the ACL entry for the specified entity on the specified object.
@@ -731,10 +737,12 @@ class ObjectAccessControlsResource_ extends Resource {
   }
 }
 
-class ObjectsResource_ extends Resource {
+class ObjectsResource_ {
 
-  ObjectsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ObjectsResource_(Client client) :
+      _client = client;
 
   /**
    * Deletes data blobs and associated metadata.
@@ -865,7 +873,7 @@ class ObjectsResource_ extends Resource {
     }
 
     var response;
-    if (?content && content != null) {
+    if (content != null) {
       response = _client.upload(uploadUrl, "POST", request.toString(), content, contentType, urlParams: urlParams, queryParams: queryParams);
     } else {
       response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);

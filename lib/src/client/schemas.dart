@@ -1,4 +1,4 @@
-part of storage_v1beta1_api_client;
+part of storage_v1beta1_api;
 
 /** A bucket. */
 class Bucket {
@@ -36,16 +36,10 @@ class Bucket {
   /** Create new Bucket from JSON data */
   Bucket.fromJson(core.Map json) {
     if (json.containsKey("acl")) {
-      acl = [];
-      json["acl"].forEach((item) {
-        acl.add(new BucketAccessControl.fromJson(item));
-      });
+      acl = json["acl"].map((aclItem) => new BucketAccessControl.fromJson(aclItem)).toList();
     }
     if (json.containsKey("defaultObjectAcl")) {
-      defaultObjectAcl = [];
-      json["defaultObjectAcl"].forEach((item) {
-        defaultObjectAcl.add(new ObjectAccessControl.fromJson(item));
-      });
+      defaultObjectAcl = json["defaultObjectAcl"].map((defaultObjectAclItem) => new ObjectAccessControl.fromJson(defaultObjectAclItem)).toList();
     }
     if (json.containsKey("id")) {
       id = json["id"];
@@ -78,16 +72,10 @@ class Bucket {
     var output = new core.Map();
 
     if (acl != null) {
-      output["acl"] = new core.List();
-      acl.forEach((item) {
-        output["acl"].add(item.toJson());
-      });
+      output["acl"] = acl.map((aclItem) => aclItem.toJson()).toList();
     }
     if (defaultObjectAcl != null) {
-      output["defaultObjectAcl"] = new core.List();
-      defaultObjectAcl.forEach((item) {
-        output["defaultObjectAcl"].add(item.toJson());
-      });
+      output["defaultObjectAcl"] = defaultObjectAcl.map((defaultObjectAclItem) => defaultObjectAclItem.toJson()).toList();
     }
     if (id != null) {
       output["id"] = id;
@@ -317,10 +305,7 @@ class BucketAccessControls {
   /** Create new BucketAccessControls from JSON data */
   BucketAccessControls.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new BucketAccessControl.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new BucketAccessControl.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -332,10 +317,7 @@ class BucketAccessControls {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -364,10 +346,7 @@ class Buckets {
   /** Create new Buckets from JSON data */
   Buckets.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Bucket.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Bucket.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -382,10 +361,7 @@ class Buckets {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -433,7 +409,7 @@ class Object {
   ObjectMedia media;
 
   /** User-provided metadata, in key/value pairs. */
-  ObjectMetadata metadata;
+  core.Map<core.String, core.String> metadata;
 
   /** The name of this object. Required if not specified by URL parameter. */
   core.String name;
@@ -447,10 +423,7 @@ class Object {
   /** Create new Object from JSON data */
   Object.fromJson(core.Map json) {
     if (json.containsKey("acl")) {
-      acl = [];
-      json["acl"].forEach((item) {
-        acl.add(new ObjectAccessControl.fromJson(item));
-      });
+      acl = json["acl"].map((aclItem) => new ObjectAccessControl.fromJson(aclItem)).toList();
     }
     if (json.containsKey("bucket")) {
       bucket = json["bucket"];
@@ -477,7 +450,7 @@ class Object {
       media = new ObjectMedia.fromJson(json["media"]);
     }
     if (json.containsKey("metadata")) {
-      metadata = new ObjectMetadata.fromJson(json["metadata"]);
+      metadata = _mapMap(json["metadata"]);
     }
     if (json.containsKey("name")) {
       name = json["name"];
@@ -495,10 +468,7 @@ class Object {
     var output = new core.Map();
 
     if (acl != null) {
-      output["acl"] = new core.List();
-      acl.forEach((item) {
-        output["acl"].add(item.toJson());
-      });
+      output["acl"] = acl.map((aclItem) => aclItem.toJson()).toList();
     }
     if (bucket != null) {
       output["bucket"] = bucket;
@@ -525,7 +495,7 @@ class Object {
       output["media"] = media.toJson();
     }
     if (metadata != null) {
-      output["metadata"] = metadata.toJson();
+      output["metadata"] = _mapMap(metadata);
     }
     if (name != null) {
       output["name"] = name;
@@ -541,64 +511,6 @@ class Object {
   }
 
   /** Return String representation of Object */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-/** User-provided metadata, in key/value pairs. */
-class ObjectMetadata {
-
-  /** Create new ObjectMetadata from JSON data */
-  ObjectMetadata.fromJson(core.Map json) {
-  }
-
-  /** Create JSON Object for ObjectMetadata */
-  core.Map toJson() {
-    var output = new core.Map();
-
-
-    return output;
-  }
-
-  /** Return String representation of ObjectMetadata */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-/** The owner of the object. This will always be the uploader of the object. */
-class ObjectOwner {
-
-  /** The entity, in the form user-userId. */
-  core.String entity;
-
-  /** The ID for the entity. */
-  core.String entityId;
-
-  /** Create new ObjectOwner from JSON data */
-  ObjectOwner.fromJson(core.Map json) {
-    if (json.containsKey("entity")) {
-      entity = json["entity"];
-    }
-    if (json.containsKey("entityId")) {
-      entityId = json["entityId"];
-    }
-  }
-
-  /** Create JSON Object for ObjectOwner */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (entity != null) {
-      output["entity"] = entity;
-    }
-    if (entityId != null) {
-      output["entityId"] = entityId;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ObjectOwner */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -682,6 +594,44 @@ class ObjectMedia {
   }
 
   /** Return String representation of ObjectMedia */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+/** The owner of the object. This will always be the uploader of the object. */
+class ObjectOwner {
+
+  /** The entity, in the form user-userId. */
+  core.String entity;
+
+  /** The ID for the entity. */
+  core.String entityId;
+
+  /** Create new ObjectOwner from JSON data */
+  ObjectOwner.fromJson(core.Map json) {
+    if (json.containsKey("entity")) {
+      entity = json["entity"];
+    }
+    if (json.containsKey("entityId")) {
+      entityId = json["entityId"];
+    }
+  }
+
+  /** Create JSON Object for ObjectOwner */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (entity != null) {
+      output["entity"] = entity;
+    }
+    if (entityId != null) {
+      output["entityId"] = entityId;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ObjectOwner */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -814,10 +764,7 @@ class ObjectAccessControls {
   /** Create new ObjectAccessControls from JSON data */
   ObjectAccessControls.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new ObjectAccessControl.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new ObjectAccessControl.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -829,10 +776,7 @@ class ObjectAccessControls {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -864,10 +808,7 @@ class Objects {
   /** Create new Objects from JSON data */
   Objects.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Object.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Object.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -876,10 +817,7 @@ class Objects {
       nextPageToken = json["nextPageToken"];
     }
     if (json.containsKey("prefixes")) {
-      prefixes = [];
-      json["prefixes"].forEach((item) {
-        prefixes.add(item);
-      });
+      prefixes = json["prefixes"].toList();
     }
   }
 
@@ -888,10 +826,7 @@ class Objects {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -900,10 +835,7 @@ class Objects {
       output["nextPageToken"] = nextPageToken;
     }
     if (prefixes != null) {
-      output["prefixes"] = new core.List();
-      prefixes.forEach((item) {
-        output["prefixes"].add(item);
-      });
+      output["prefixes"] = prefixes.toList();
     }
 
     return output;
@@ -914,3 +846,16 @@ class Objects {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}
