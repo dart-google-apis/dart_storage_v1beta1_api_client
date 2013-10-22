@@ -106,7 +106,7 @@ class Bucket {
   }
 
   /** Return String representation of Bucket */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -144,7 +144,7 @@ class BucketOwner {
   }
 
   /** Return String representation of BucketOwner */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -182,7 +182,7 @@ class BucketWebsite {
   }
 
   /** Return String representation of BucketWebsite */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -203,8 +203,12 @@ class BucketAccessControl {
 - user-email 
 - group-groupId 
 - group-email 
+- domain-domain 
 - allUsers 
-- allAuthenticatedUsers */
+- allAuthenticatedUsers Examples: 
+- The user liz@example.com would be user-liz@example.com. 
+- The group example@googlegroups.com would be group-example@googlegroups.com. 
+- To refer to all members of the Google Apps for Business domain example.com, the entity would be domain-example.com. */
   core.String entity;
 
   /** The ID for the entity, if any. */
@@ -289,7 +293,7 @@ class BucketAccessControl {
   }
 
   /** Return String representation of BucketAccessControl */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -327,7 +331,7 @@ class BucketAccessControls {
   }
 
   /** Return String representation of BucketAccessControls */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -374,7 +378,7 @@ class Buckets {
   }
 
   /** Return String representation of Buckets */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -511,7 +515,7 @@ class Object {
   }
 
   /** Return String representation of Object */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -594,7 +598,7 @@ class ObjectMedia {
   }
 
   /** Return String representation of ObjectMedia */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -632,7 +636,7 @@ class ObjectOwner {
   }
 
   /** Return String representation of ObjectOwner */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -653,8 +657,12 @@ class ObjectAccessControl {
 - user-email 
 - group-groupId 
 - group-email 
+- domain-domain 
 - allUsers 
-- allAuthenticatedUsers */
+- allAuthenticatedUsers Examples: 
+- The user liz@example.com would be user-liz@example.com. 
+- The group example@googlegroups.com would be group-example@googlegroups.com. 
+- To refer to all members of the Google Apps for Business domain example.com, the entity would be domain-example.com. */
   core.String entity;
 
   /** The ID for the entity, if any. */
@@ -748,7 +756,7 @@ class ObjectAccessControl {
   }
 
   /** Return String representation of ObjectAccessControl */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -786,7 +794,7 @@ class ObjectAccessControls {
   }
 
   /** Return String representation of ObjectAccessControls */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -842,7 +850,7 @@ class Objects {
   }
 
   /** Return String representation of Objects */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
