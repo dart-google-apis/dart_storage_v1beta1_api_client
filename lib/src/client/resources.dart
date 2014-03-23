@@ -12,7 +12,7 @@ class BucketAccessControlsResource_ {
    *
    * [bucket] - Name of a bucket.
    *
-   * [entity] - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.
+   * [entity] - The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
    *
    * [optParams] - Additional query parameters
    */
@@ -48,7 +48,7 @@ class BucketAccessControlsResource_ {
    *
    * [bucket] - Name of a bucket.
    *
-   * [entity] - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.
+   * [entity] - The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
    *
    * [optParams] - Additional query parameters
    */
@@ -155,7 +155,7 @@ class BucketAccessControlsResource_ {
    *
    * [bucket] - Name of a bucket.
    *
-   * [entity] - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.
+   * [entity] - The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
    *
    * [optParams] - Additional query parameters
    */
@@ -194,7 +194,7 @@ class BucketAccessControlsResource_ {
    *
    * [bucket] - Name of a bucket.
    *
-   * [entity] - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.
+   * [entity] - The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
    *
    * [optParams] - Additional query parameters
    */
@@ -500,7 +500,7 @@ class ObjectAccessControlsResource_ {
    *
    * [object] - Name of the object.
    *
-   * [entity] - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.
+   * [entity] - The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
    *
    * [optParams] - Additional query parameters
    */
@@ -540,7 +540,7 @@ class ObjectAccessControlsResource_ {
    *
    * [object] - Name of the object.
    *
-   * [entity] - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.
+   * [entity] - The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
    *
    * [optParams] - Additional query parameters
    */
@@ -659,7 +659,7 @@ class ObjectAccessControlsResource_ {
    *
    * [object] - Name of the object.
    *
-   * [entity] - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.
+   * [entity] - The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
    *
    * [optParams] - Additional query parameters
    */
@@ -702,7 +702,7 @@ class ObjectAccessControlsResource_ {
    *
    * [object] - Name of the object.
    *
-   * [entity] - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.
+   * [entity] - The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
    *
    * [optParams] - Additional query parameters
    */
