@@ -6,6 +6,7 @@ import 'package:google_storage_v1beta1_api/src/browser_client.dart';
 import "package:google_storage_v1beta1_api/storage_v1beta1_api_client.dart";
 
 /** Lets you store and retrieve potentially-large, immutable data objects. */
+@deprecated
 class Storage extends Client with BrowserClient {
 
   /** OAuth Scope2: Manage your data and permissions in Google Cloud Storage */
